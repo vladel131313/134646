@@ -1,0 +1,24 @@
+double infix(double x)
+{
+  char op;
+  while (cin >> op)
+  {
+    double y;
+    if (cin >> y)
+    {
+      switch (op)
+      {
+      case '+': x = x + y; break;
+      case '-': x = x - y; break;
+      case '*': x = x * y; break;
+      case '/': x = x / y; break;
+      default:
+        cerr << "unknown operation '" << op << "'\n";
+        return x;
+      }
+    }
+    else
+      cerr << "number expected\n";
+  }
+  return x;
+}
